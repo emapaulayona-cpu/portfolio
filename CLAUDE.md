@@ -166,6 +166,35 @@ Stack: Python, PyMuPDF, EasyDoc API, watchdog
 Outcome: End-to-end pipeline — Hebrew insurance PDF in, signing link out. Zero manual steps, zero visible artifacts in the final document.
 
 ---
+### Project 05
+
+Number: 05
+Title: CAD Data Extraction → Automated BOQ
+Subtitle: Engineering Drawing Intelligence Pipeline
+Tag: Python + n8n Automation
+Screenshot file: screenshots/project-05.png
+Summary:
+Built a POC for an enterprise geospatial/engineering company demonstrating
+that CAD drawing data can be programmatically extracted, structured as JSON
+and processed into a live Bill of Quantities — replacing a fully manual
+quantity surveying process.
+Phase 1 — Mock DXF Generation:
+Generated a realistic CAD floor plan using Python and ezdxf,
+containing 85+ INSERT entities across 6 engineering layers (Furniture, Doors,
+Electrical, Structural, HVAC, Plumbing) — each with floor number and room ID
+attributes simulating a real multi-floor building plan.
+Phase 2 — Data Extraction & Webhook:
+Built a Python extraction script that parses the DXF file, filters INSERT
+entities, groups them by layer and block type, and structures the output into
+a clean JSON payload — sent via HTTP POST to an n8n automation webhook.
+Phase 3 — Automated BOQ Generation:
+Built an n8n workflow that receives the JSON, flattens the nested structure
+into individual rows, and appends them to a live Google Sheet — producing a
+real-time Bill of Quantities broken down by layer, item type, floor and room.
+Stack: Python, ezdxf, n8n, Google Sheets, Webhooks
+Outcome: DXF file in, live BOQ out. Full pipeline from CAD drawing to
+structured business output — zero manual steps.
+---
 
 ## Screenshot Handling
 
